@@ -1,14 +1,16 @@
-/* Global Styles */
+/* Global Styles - Netflix Inspired */
 :root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --accent-color: #f093fb;
+  --primary-color: #e50914;
+  --secondary-color: #b20710;
+  --accent-color: #ff6b6b;
   --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
-  --bg-primary: #1a202c;
-  --bg-secondary: #2d3748;
-  --bg-card: rgba(255, 255, 255, 0.05);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --text-secondary: #e5e5e5;
+  --bg-primary: #141414;
+  --bg-secondary: #1f1f1f;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --netflix-red: #e50914;
+  --netflix-dark: #141414;
 }
 
 * {
@@ -18,11 +20,25 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, var(--netflix-dark) 0%, #1f1f1f 50%, #0f0f0f 100%);
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(229, 9, 20, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(229, 9, 20, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Smooth Scrolling */
@@ -45,7 +61,7 @@ html {
 }
 
 /* Text Color Fixes */
-.text-white, .card-title, .achievement-title, .project-title, .about-title, .contact-title, .form-title {
+.text-white, .card-title, .achievement-title, .project-title, .about-title, .contact-title, .form-title, .position-title, .company-name {
   color: #ffffff !important;
 }
 
@@ -56,6 +72,28 @@ html {
 .certification-item {
   color: #e2e8f0 !important;
   margin-bottom: 0.5rem;
+}
+
+/* Experience Section Text Fixes */
+.experience-card .card-body * {
+  color: #ffffff !important;
+}
+
+.experience-card .achievements li {
+  color: #e2e8f0 !important;
+}
+
+.experience-meta {
+  color: #b8c5d6 !important;
+}
+
+/* Projects Section Text Fixes */
+.project-card .card-body * {
+  color: #ffffff !important;
+}
+
+.project-card .project-description {
+  color: #e2e8f0 !important;
 }
 
 /* Navigation */
@@ -167,33 +205,73 @@ html {
 }
 
 .custom-btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--netflix-red), var(--secondary-color));
   border: none;
   padding: 0.75rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.custom-btn-primary:hover::before {
+  left: 100%;
 }
 
 .custom-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(229, 9, 20, 0.6);
+  background: linear-gradient(135deg, #ff1e2d, var(--netflix-red));
 }
 
 .custom-btn-outline {
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 2px solid var(--netflix-red);
+  color: var(--netflix-red);
   background: transparent;
   padding: 0.75rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--netflix-red);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.custom-btn-outline:hover::before {
+  width: 100%;
 }
 
 .custom-btn-outline:hover {
-  background: var(--primary-color);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(229, 9, 20, 0.4);
 }
 
 .profile-container {
@@ -211,12 +289,20 @@ html {
   overflow: hidden;
 }
 
-.profile-bg {
+.profile-img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  object-fit: cover;
   border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
   animation: float 6s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(102, 126, 234, 0.8);
 }
 
 @keyframes float {
@@ -226,12 +312,27 @@ html {
 
 /* Section Styles */
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.8rem;
+  font-weight: 900;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--netflix-red), #ff6b6b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--netflix-red), #ff6b6b);
+  border-radius: 2px;
 }
 
 .section-subtitle {
@@ -254,9 +355,10 @@ html {
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  border-color: var(--primary-color);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(229, 9, 20, 0.3);
+  border-color: var(--netflix-red);
+  background: rgba(229, 9, 20, 0.1);
 }
 
 .skill-category-icon {
@@ -326,8 +428,9 @@ html {
 }
 
 .experience-card:hover {
-  transform: translateX(10px);
-  border-color: var(--primary-color);
+  transform: translateX(15px) scale(1.02);
+  border-color: var(--netflix-red);
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
 }
 
 .experience-header {
@@ -379,8 +482,9 @@ html {
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(229, 9, 20, 0.4);
+  border-color: var(--netflix-red);
 }
 
 .featured-project {

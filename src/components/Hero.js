@@ -31,10 +31,9 @@ const Hero = () => {
                   variant="outline-light" 
                   size="lg" 
                   className="custom-btn-outline"
-                  href="/resume.pdf"
-                  target="_blank"
+                  onClick={() => window.print()}
                 >
-                  <FaDownload className="me-2" /> Resume
+                  <FaDownload className="me-2" /> Download Resume
                 </Button>
               </div>
             </div>
@@ -42,7 +41,11 @@ const Hero = () => {
           <Col lg={6} className="hero-image" data-aos="fade-left">
             <div className="profile-container">
               <div className="profile-image">
-                <div className="profile-bg"></div>
+                <img 
+                src="/profile_photo.jpg" 
+                alt="Manohara Reddy B C" 
+                className="profile-img"
+              />
               </div>
             </div>
           </Col>
