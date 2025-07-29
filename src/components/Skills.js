@@ -6,34 +6,54 @@ import { SiTensorflow, SiKubernetes, SiMongodb, SiPostgresql } from 'react-icons
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
-      icon: <FaReact className="skill-category-icon" />,
-      skills: ["React.js", "Vue.js", "JavaScript", "TypeScript", "Bootstrap", "Tailwind CSS", "HTML5", "CSS3"]
-    },
-    {
-      title: "Backend Development", 
-      icon: <FaNodeJs className="skill-category-icon" />,
-      skills: ["Node.js", "Express.js", "Python", "Flask", "Django", "FastAPI", "RESTful APIs", "GraphQL"]
-    },
-    {
-      title: "AI & Machine Learning",
+      title: "AI | ML | DL",
       icon: <SiTensorflow className="skill-category-icon" />,
-      skills: ["PyTorch", "TensorFlow", "LangChain", "OpenAI", "Transformers", "scikit-learn", "MLflow", "Jupyter"]
+      skills: ["PyTorch", "TensorFlow", "scikit-learn", "LangChain", "LangGraph", "Transformers", "MLflow", "OpenAI", "Kaggle", "Jupyter", "Google Colab"]
+    },
+    {
+      title: "Python Libraries", 
+      icon: <FaPython className="skill-category-icon" />,
+      skills: ["FastAPI", "Flask", "Django", "BeautifulSoup", "Selenium", "Pandas", "NumPy", "SQLAlchemy", "Matplotlib"]
+    },
+    {
+      title: "Web Frameworks",
+      icon: <FaReact className="skill-category-icon" />,
+      skills: ["React.js", "Node.js", "Express", "Vue.js", "Bootstrap", "Tailwind CSS", "HTML5", "CSS3"]
     },
     {
       title: "Cloud & DevOps",
       icon: <FaAws className="skill-category-icon" />,
-      skills: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD", "Terraform", "Jenkins", "GitHub Actions"]
+      skills: ["AWS (Lambda, EC2, S3, DynamoDB, EKS)", "Azure", "Google Cloud", "Docker", "Kubernetes", "Azure Machine Learning"]
+    },
+    {
+      title: "Big Data & Streaming",
+      icon: <SiKubernetes className="skill-category-icon" />,
+      skills: ["Databricks", "Apache Spark", "Kafka", "Azure Data Factory", "AWS Kinesis", "Real-time Processing"]
     },
     {
       title: "Databases",
       icon: <SiMongodb className="skill-category-icon" />,
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Neo4j", "DynamoDB", "SQLAlchemy", "Prisma"]
+      skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Neo4j", "DynamoDB", "Vector Databases"]
     },
     {
-      title: "Tools & Technologies",
+      title: "Languages",
       icon: <FaGitAlt className="skill-category-icon" />,
-      skills: ["Git", "Jira", "Grafana", "Kafka", "Spark", "Selenium", "BeautifulSoup", "Pandas"]
+      skills: ["Python", "JavaScript", "TypeScript", "Java", "C/C++", "SQL", "HTML", "CSS"]
+    },
+    {
+      title: "CI/CD & IaC",
+      icon: <FaDocker className="skill-category-icon" />,
+      skills: ["GitHub Actions", "GitLab CI/CD", "Jenkins", "Terraform", "AWS CloudFormation", "Ansible"]
+    },
+    {
+      title: "Agentic Frameworks",
+      icon: <SiTensorflow className="skill-category-icon" />,
+      skills: ["LangChain", "LangGraph", "CrewAI", "Microsoft AutoGen", "UV", "RAG Pipelines"]
+    },
+    {
+      title: "Monitoring & Tools",
+      icon: <SiPostgresql className="skill-category-icon" />,
+      skills: ["Grafana", "Kibana", "Prometheus", "Splunk", "Jira", "Git", "Airflow"]
     }
   ];
 
@@ -43,7 +63,7 @@ const Skills = () => {
         <Row>
           <Col lg={12} className="text-center mb-5">
             <h2 className="section-title" data-aos="fade-up">Technical Skills</h2>
-            <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <p className="section-subtitle text-light" data-aos="fade-up" data-aos-delay="100">
               Technologies and tools I work with
             </p>
           </Col>
@@ -60,7 +80,7 @@ const Skills = () => {
                   <div className="skill-icon-container mb-3">
                     {category.icon}
                   </div>
-                  <Card.Title className="skill-title">{category.title}</Card.Title>
+                  <Card.Title className="skill-title text-white">{category.title}</Card.Title>
                   <div className="skills-list">
                     {category.skills.map((skill, skillIndex) => (
                       <span key={skillIndex} className="skill-tag">

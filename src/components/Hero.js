@@ -10,7 +10,7 @@ const Hero = () => {
           <Col lg={6} className="hero-content" data-aos="fade-right">
             <div className="hero-text">
               <h1 className="hero-title">
-                Hi, I'm <span className="text-gradient">Manohar Reddy</span>
+                Hi, I'm <span className="text-gradient">Manohara Reddy B C</span>
               </h1>
               <h2 className="hero-subtitle">Lead Software Engineer</h2>
               <p className="hero-description">

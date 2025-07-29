@@ -24,7 +24,7 @@ const NavigationBar = () => {
     >
       <Container>
         <Navbar.Brand href="#home" className="brand-name">
-          Manohar Reddy
+          Manohara Reddy B C
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

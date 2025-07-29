@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
               <div className="footer-text">
                 <p>
-                  Made with <FaHeart className="heart-icon" /> by Manohar Reddy
+                  Made with <FaHeart className="heart-icon" /> by Manohara Reddy B C
                 </p>
                 <p className="footer-subtitle">
                   © {new Date().getFullYear()} All rights reserved.

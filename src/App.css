@@ -4,9 +4,9 @@
   --secondary-color: #764ba2;
   --accent-color: #f093fb;
   --text-primary: #ffffff;
-  --text-secondary: #b8c5d6;
-  --bg-primary: #0a0e27;
-  --bg-secondary: #1a1f3a;
+  --text-secondary: #e2e8f0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
   --bg-card: rgba(255, 255, 255, 0.05);
   --border-color: rgba(255, 255, 255, 0.1);
 }
@@ -19,8 +19,8 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -42,6 +42,20 @@ html {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   border-radius: 4px;
+}
+
+/* Text Color Fixes */
+.text-white, .card-title, .achievement-title, .project-title, .about-title, .contact-title, .form-title {
+  color: #ffffff !important;
+}
+
+.text-light, .card-text, .achievement-description, .project-description, .about-description, .experience-description {
+  color: #e2e8f0 !important;
+}
+
+.certification-item {
+  color: #e2e8f0 !important;
+  margin-bottom: 0.5rem;
 }
 
 /* Navigation */
@@ -251,7 +265,7 @@ html {
 }
 
 .skill-title {
-  color: var(--text-primary);
+  color: #ffffff !important;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -324,7 +338,7 @@ html {
 }
 
 .position-title {
-  color: var(--text-primary);
+  color: #ffffff !important;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
