@@ -42,9 +42,12 @@ const Hero = () => {
             <div className="profile-container">
               <div className="profile-image">
                 <img 
-                src="/profile_photo.jpg" 
+                src={`${process.env.PUBLIC_URL}/profile_photo.jpg`}
                 alt="Manohara Reddy B C" 
                 className="profile-img"
+                onError={(e) => {
+                  e.target.src = 'https://via.placeholder.com/300x300/667eea/ffffff?text=MR';
+                }}
               />
               </div>
             </div>
