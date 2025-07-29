@@ -42,7 +42,7 @@ const Hero = () => {
             <div className="profile-container">
               <div className="profile-image">
                 <img 
-                src={`${process.env.PUBLIC_URL}/profile_photo.jpg`}
+                src="./profile_photo.jpg"
                 alt="Manohara Reddy B C" 
                 className="profile-img"
                 onError={(e) => {
