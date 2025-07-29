@@ -17,7 +17,7 @@ const About = () => {
     {
       icon: <FaCertificate className="achievement-icon" />,
       title: "Phish Buster Award", 
-      description: "Virtusa - Excellence in phishing threat detection and cybersecurity enhancements"
+      description: "Brigosha Technologies - Excellence in phishing threat detection and cybersecurity enhancements"
     },
     {
       icon: <FaGraduationCap className="achievement-icon" />,
@@ -29,7 +29,7 @@ const About = () => {
   const certifications = [
     "AWS Certified Solutions Architect Professional (2025)",
     "Generative AI for Beginners - Simplilearn",
-    "Introduction to Large Language Models - Virtusa",
+    "Introduction to Large Language Models - Brigosha Technologies",
     "GenAI Assisted Engineer - Google Cloud Education"
   ];
 

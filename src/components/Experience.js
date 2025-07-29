@@ -19,11 +19,11 @@ const Experience = () => {
       technologies: ["Python", "GPT-4", "LangChain", "FastAPI", "React.js", "AWS"]
     },
     {
-      company: "Virtusa (Cisco Systems)",
+      company: "Brigosha Technologies Private Limited",
       position: "Associate Software Developer", 
       duration: "Jun 2020 - Mar 2022",
-      location: "Hyderabad, India",
-      description: "Full-stack development and DevOps implementation",
+      location: "Bengaluru, India",
+      description: "Full-stack development and deployment projects",
       achievements: [
         "Built Indian Urban Data Exchange platform with real-time data visualization",
         "Integrated 6+ heterogeneous data streams with sub-second latency",
